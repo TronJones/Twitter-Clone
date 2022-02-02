@@ -1,13 +1,23 @@
 {% extends 'base.html' %} {% block content %}{% load static %}
 
 <section class="content">
+  <div class="header">
+    <img class="logo" src="{% static 'img/techis-logo.png' %}" alt="" />
+    <h1>Home</h1>
+  </div>
   <section class="post_form">
-    <form action="/" method="POST">
+    <form action="/" method="POST" enctype="multipart/form-data">
       {% csrf_token %}
-      <input type="text" name="name" placeholder="Name" required /><br />
-      <textarea name="body" placeholder="Tell us anything" required></textarea
-      ><br />
-      <input type="submit" value="Post" />
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required
+        style="background-color: #e6fef7"
+      />
+      <textarea name="body" placeholder="What is Happening" required></textarea>
+      <input id="uploadfile" type="file" name="image" />
+      <input id="button" type="submit" value="Tweet" />
     </form>
   </section>
   <section class="posts">
@@ -16,7 +26,8 @@
       <li>
         <img class="menu_icon js-menu-icon" src="{% static 'img/menu.png' %}" />
         <div class="menu">
-          <a href="delete/{{ post.id }}">delete</a>
+          <a href="delete/{{ post.id }}">delete</a><br>
+          <a href="edit/{{ post.id }}">edit</a>
         </div>
 
         <div class="logo">
@@ -27,6 +38,13 @@
           <div class="datetime">{{post.created_at}} <br /></div>
           <p>{{post.body}} <br /></p>
           <!-- <a href="/delete/{{ post.id }}/">delete</a> -->
+          {% if post.image.url %}
+          <img src="{{post.image.url}}" style="width: 250px; height: 200px;" alt="">
+          {% endif %}
+          <div>
+            <a href="/like/{{post.id}}"><img src="{% static 'img/heart.png' %}" style="width: 30px;" alt=""></a>
+            {{post.likecount}}
+          </div>
         </div>
       </li>
       {% endfor %}

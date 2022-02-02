@@ -7,19 +7,25 @@ body {
 
 .content {
   max-width: 600px;
-  height: 100%;
   margin: 0 auto;
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
 }
+.header {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  padding-left: 10px;
+}
+.header img {
+  height: 60px;
+}
+.header h1 {
+  padding-left: 10px;
+}
 
 /* Post
 *************/
-/* form {
-  flex-direction: column;
-  display: flex;
-  padding: 10px;
-} */
+
 .post_form {
   padding: 20px 40px;
   border-bottom: 1px solid #ccc;
@@ -34,6 +40,27 @@ body {
   width: 70%;
   padding: 10px;
   border: 1px solid #ccc;
+}
+#uploadfile {
+  width: 50%;
+  border: hidden;
+  overflow: hidden;
+}
+#button {
+  width: 20%;
+  background-color: rgb(29, 161, 242);
+  color: white;
+  border-radius: 5px;
+}
+.tweet {
+  display: inline;
+}
+#cancel {
+  text-decoration: none;
+  border: 1px solid;
+  padding: 8px;
+  background-color: grey;
+  color: white;
 }
 
 .posts ul {
