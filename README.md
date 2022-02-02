@@ -7,6 +7,7 @@ So there are not user accounts and follow function. You can challenge after you 
 ```
 Check out [LIVE Twitter clone DEMO](https://twitterclone-antrone.herokuapp.com) here!!
 
+<img width="610" alt="Screen Shot 2022-02-02 at 5 20 11 PM" src="https://user-images.githubusercontent.com/94083340/152247704-a06efbb8-2407-4180-a882-f453138655e9.png">
 
 
 
